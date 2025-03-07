@@ -11,6 +11,13 @@ console.log(countDown)
   x = setInterval(function () {
     let now = new Date().getTime(),
       distance = countDown - now;
+      if(distance <= 0){
+        const headline = document.getElementById("headline");
+        headline.innerText = "CTF has started";
+        const countDown = document.getElementById("countdown");
+        countDown.style.display = "none";
+
+      }
 
     (document.getElementById("days").innerHTML = Math.floor(distance / day)),
       (document.getElementById("hours").innerHTML = Math.floor(
